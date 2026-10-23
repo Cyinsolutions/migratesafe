@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import ssl
 import sys
 from typing import List, Optional
 
@@ -82,6 +83,11 @@ def main(argv: Optional[List[str]] = None) -> int:
             return 64
     else:
         ids = checks_for_phase(args.phase)
+
+    if not ssl.HAS_TLSv1_3:
+        print(f"warning: this Python's TLS library ({ssl.OPENSSL_VERSION}) does not support TLS 1.3; "
+              "servers that only accept TLS 1.3 will appear unreachable. Use a Python built with "
+              "OpenSSL 1.1.1 or later.", file=sys.stderr)
 
     results = []
     for cid in ids:
