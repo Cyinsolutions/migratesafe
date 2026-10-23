@@ -118,6 +118,14 @@ Current result: 27/28 faults flagged by the expected check, 1 (registered lookal
 design, and 0 false positives on the baseline. See [`evaluation/results.md`](evaluation/results.md) for the
 per-fault table and limitations.
 
+## Measurement of centralized exchanges
+
+`python3 -m evaluation.measure evaluation/cex_domains.txt` runs the six checks that need no operator input
+(C3, C4, C5, C7, C9, C13) against the 150 centralized-exchange domains listed in `evaluation/cex_domains.txt`
+(CoinGecko, 23 October 2026). Only aggregate results are published:
+[`evaluation/measurement_cex_2026-10-23_summary.json`](evaluation/measurement_cex_2026-10-23_summary.json).
+The measurement is passive: public DNS, one HTTPS request to the home page, and TLS handshakes.
+
 ## Tests
 
 ```bash
