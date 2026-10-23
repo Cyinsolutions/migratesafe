@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use MigrateSafe, please cite the accompanying paper."
+title: "MigrateSafe: read-only security audit for domain migrations"
+version: 0.1.0
+date-released: 2026-10-23
+license: MIT
+repository-code: "https://github.com/myabhya/migratesafe"
+authors:
+  - family-names: More
+    given-names: Abhijeet Ashok
+    orcid: "https://orcid.org/0009-0001-4934-0204"
+    affiliation: "Cyin Solutions Pvt Ltd"
+keywords:
+  - security
+  - dns
+  - domain migration
+  - subdomain takeover
+  - hsts
+  - dmarc
+preferred-citation:
+  type: article
+  title: "MigrateSafe: A Threat Model and Verification Framework for Secure Domain Migration of Web-Hosted Cryptocurrency Trading Platforms"
+  authors:
+    - family-names: More
+      given-names: Abhijeet Ashok
+      orcid: "https://orcid.org/0009-0001-4934-0204"
+  year: 2026
+  publisher:
+    name: Zenodo
+  doi: "10.5281/zenodo.23576774"
+  notes: "Preprint"

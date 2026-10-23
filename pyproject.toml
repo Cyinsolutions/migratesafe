@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "migratesafe"
+version = "0.1.0"
+description = "Read-only security audit for domain migrations (MigrateSafe checks C1-C14)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Abhijeet Ashok More", email = "admin@cyinsolutions.com"}]
+keywords = ["security", "dns", "domain-migration", "subdomain-takeover", "hsts", "dmarc", "caa", "audit"]
+dependencies = ["dnspython>=2.3"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Information Technology",
+    "Topic :: Internet :: Name Service (DNS)",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Security",
+    "Environment :: Console",
+]
+
+[project.urls]
+Homepage = "https://github.com/myabhya/migratesafe"
+Repository = "https://github.com/myabhya/migratesafe"
+Issues = "https://github.com/myabhya/migratesafe/issues"
+Paper = "https://doi.org/10.5281/zenodo.23576774"
+ORCID = "https://orcid.org/0009-0001-4934-0204"
+
+[project.scripts]
+migratesafe = "migratesafe.cli:main"
+
+[tool.setuptools]
+packages = ["migratesafe"]

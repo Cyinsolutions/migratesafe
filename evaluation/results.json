@@ -1,0 +1,423 @@
+{
+  "tool_version": "0.1.0",
+  "faults": 28,
+  "detected": 27,
+  "detection_rate": 0.964,
+  "baseline_status": {
+    "C1": "INFO",
+    "C2": "PASS",
+    "C3": "PASS",
+    "C4": "PASS",
+    "C5": "PASS",
+    "C6": "INFO",
+    "C7": "PASS",
+    "C8": "PASS",
+    "C9": "PASS",
+    "C10": "PASS",
+    "C11": "MANUAL",
+    "C12": "MANUAL",
+    "C13": "PASS",
+    "C14": "MANUAL"
+  },
+  "baseline_false_positives": [],
+  "by_threat": {
+    "T1": {
+      "detected": 5,
+      "total": 5
+    },
+    "T2": {
+      "detected": 3,
+      "total": 3
+    },
+    "T3": {
+      "detected": 3,
+      "total": 3
+    },
+    "T4": {
+      "detected": 5,
+      "total": 5
+    },
+    "T5": {
+      "detected": 5,
+      "total": 5
+    },
+    "T6": {
+      "detected": 3,
+      "total": 3
+    },
+    "T7": {
+      "detected": 0,
+      "total": 1
+    },
+    "T8": {
+      "detected": 3,
+      "total": 3
+    }
+  },
+  "audits": 29,
+  "seconds": 0.16,
+  "rows": [
+    {
+      "fault": "F01",
+      "threat": "T1",
+      "description": "CNAME left in zone points to a de-provisioned host (NXDOMAIN target)",
+      "expected_check": "C2",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C2"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F02",
+      "threat": "T1",
+      "description": "CNAME to an unclaimed GitHub Pages site (takeover fingerprint)",
+      "expected_check": "C2",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C2"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F03",
+      "threat": "T1",
+      "description": "MX record points to a mail host that no longer exists",
+      "expected_check": "C2",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C2"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F04",
+      "threat": "T1",
+      "description": "Hostname visible only in CT logs is missing from the inventory",
+      "expected_check": "C1",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C1"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F05",
+      "threat": "T3",
+      "description": "Registrar still lists the former provider's nameserver (parent != zone NS)",
+      "expected_check": "C3",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C3"
+      ],
+      "earliest_phase": "P2"
+    },
+    {
+      "fault": "F06",
+      "threat": "T3",
+      "description": "Delegated nameserver no longer serves the zone (lame delegation)",
+      "expected_check": "C3",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C3"
+      ],
+      "earliest_phase": "P2"
+    },
+    {
+      "fault": "F07",
+      "threat": "T3",
+      "description": "Stale DS record after DNS-provider change (DNSSEC bogus)",
+      "expected_check": "C4",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C4"
+      ],
+      "earliest_phase": "P2"
+    },
+    {
+      "fault": "F08",
+      "threat": "T4",
+      "description": "No CAA record on the new name",
+      "expected_check": "C5",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C5"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F09",
+      "threat": "T4",
+      "description": "CAA present but without an iodef contact",
+      "expected_check": "C5",
+      "expected_status": "WARN",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C5"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F10",
+      "threat": "T4",
+      "description": "Certificate issued by an unexpected CA appears in CT",
+      "expected_check": "C6",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C6"
+      ],
+      "earliest_phase": "P3"
+    },
+    {
+      "fault": "F11",
+      "threat": "T4",
+      "description": "New origin serves an expired or untrusted certificate",
+      "expected_check": "C7",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C7"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F12",
+      "threat": "T5",
+      "description": "New origin still accepts TLS 1.1",
+      "expected_check": "C7",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C7"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F13",
+      "threat": "T4",
+      "description": "Former hosting provider still serves a valid certificate for the names",
+      "expected_check": "C8",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C8"
+      ],
+      "earliest_phase": "P3"
+    },
+    {
+      "fault": "F14",
+      "threat": "T5",
+      "description": "No HSTS header on the new name",
+      "expected_check": "C9",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C9"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F15",
+      "threat": "T5",
+      "description": "HSTS max-age too short after stabilization",
+      "expected_check": "C9",
+      "expected_status": "WARN",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C9"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F16",
+      "threat": "T2",
+      "description": "Old name keeps serving the legacy site instead of redirecting",
+      "expected_check": "C10",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C10"
+      ],
+      "earliest_phase": "P2"
+    },
+    {
+      "fault": "F17",
+      "threat": "T5",
+      "description": "Old name uses a temporary redirect and drops the path",
+      "expected_check": "C10",
+      "expected_status": "WARN",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C10"
+      ],
+      "earliest_phase": "P2"
+    },
+    {
+      "fault": "F18",
+      "threat": "T8",
+      "description": "Legacy redirect builds its target from X-Forwarded-Host (open redirect)",
+      "expected_check": "C10",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C10"
+      ],
+      "earliest_phase": "P2"
+    },
+    {
+      "fault": "F19",
+      "threat": "T1",
+      "description": "Session cookie scoped to the parent domain (Domain attribute)",
+      "expected_check": "C11",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C11"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F20",
+      "threat": "T5",
+      "description": "Session cookie without HttpOnly",
+      "expected_check": "C11",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C11"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F21",
+      "threat": "T8",
+      "description": "APP_URL still points to the old name",
+      "expected_check": "C12",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C12"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F22",
+      "threat": "T8",
+      "description": "CORS allow-list still contains the old origin",
+      "expected_check": "C12",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C12"
+      ],
+      "earliest_phase": "P1"
+    },
+    {
+      "fault": "F23",
+      "threat": "T6",
+      "description": "SPF on the new name ends in ~all",
+      "expected_check": "C13",
+      "expected_status": "WARN",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C13"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F24",
+      "threat": "T6",
+      "description": "No DMARC record on the new name",
+      "expected_check": "C13",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C13"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F25",
+      "threat": "T6",
+      "description": "Retired old name has no DMARC policy (spoofable)",
+      "expected_check": "C13",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C13"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F26",
+      "threat": "T2",
+      "description": "Old name registration expires in 20 days",
+      "expected_check": "C14",
+      "expected_status": "FAIL",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C14"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F27",
+      "threat": "T2",
+      "description": "Old name has no transfer lock",
+      "expected_check": "C14",
+      "expected_status": "WARN",
+      "detected": true,
+      "reported_only": false,
+      "flagged_by": [
+        "C14"
+      ],
+      "earliest_phase": "P0"
+    },
+    {
+      "fault": "F28",
+      "threat": "T7",
+      "description": "A lookalike of the new name is registered",
+      "expected_check": "C14",
+      "expected_status": "MANUAL",
+      "detected": false,
+      "reported_only": true,
+      "flagged_by": [],
+      "earliest_phase": "P0"
+    }
+  ]
+}

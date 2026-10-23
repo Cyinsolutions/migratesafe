@@ -1,0 +1,17 @@
+{
+  "inventory": {
+    "new.example": "migrate",
+    "www.new.example": "migrate",
+    "api.new.example": "migrate",
+    "old.example": "redirect",
+    "www.old.example": "redirect",
+    "status.old.example": "delete"
+  },
+  "allowed_issuers": ["Let's Encrypt"],
+  "dkim_selectors": ["default"],
+  "old_host_ip": "203.0.113.10",
+  "dnssec_exception": false,
+  "old_domain_mail": "retired",
+  "session_paths": ["/", "/login"],
+  "config_ignore": ["CHANGELOG.md"]
+}
