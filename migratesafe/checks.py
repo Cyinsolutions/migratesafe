@@ -285,12 +285,13 @@ def c7_tls(ctx: Context) -> Result:
         if foreign:
             r.add(INFO, host, "certificate also covers other names (shared/CDN certificate): " + ", ".join(foreign[:5]))
         old = tls_connect(host, timeout=ctx.timeout, max_version=ssl.TLSVersion.TLSv1_1)
-        if old.ok:
+        verdict = P.classify_legacy_tls(old.ok, old.error)
+        if verdict == "accepted":
             r.add(FAIL, host, f"server still accepts {old.version}")
-        elif old.error and any(k in old.error.lower() for k in ("protocol version", "handshake failure", "wrong version")):
+        elif verdict == "refused":
             r.add(PASS, host, "TLS 1.0/1.1 refused by server")
         else:
-            r.add(INFO, host, "could not test TLS 1.0/1.1 from this client")
+            r.add(INFO, host, f"could not test TLS 1.0/1.1 from this client ({old.error})")
     if not r.findings:
         r.add(FAIL, ctx.new, "new name does not resolve")
     return r

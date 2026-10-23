@@ -1,5 +1,5 @@
 {
-  "tool_version": "0.1.0",
+  "tool_version": "0.1.1",
   "faults": 28,
   "detected": 27,
   "detection_rate": 0.964,

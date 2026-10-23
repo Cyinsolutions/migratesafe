@@ -75,6 +75,17 @@ class CookieTest(unittest.TestCase):
         self.assertEqual(self.statuses("__cf_bm=x; Domain=example.com; HttpOnly"), ["INFO"])
 
 
+class LegacyTlsTest(unittest.TestCase):
+    def test_classification(self):
+        c = P.classify_legacy_tls
+        self.assertEqual(c(True, None), "accepted")
+        self.assertEqual(c(False, "SSLError: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version"), "refused")
+        self.assertEqual(c(False, "ConnectionResetError: [Errno 54] Connection reset by peer"), "refused")
+        self.assertEqual(c(False, "SSLEOFError: EOF occurred in violation of protocol"), "refused")
+        self.assertEqual(c(False, "SSLError: [SSL: NO_PROTOCOLS_AVAILABLE] no protocols available"), "unknown")
+        self.assertEqual(c(False, "TimeoutError: timed out"), "unknown")
+
+
 class RedirectTest(unittest.TestCase):
     probe = "/migratesafe-probe/path?q=1"
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 – 2026-10-23
+
+- C7: the TLS 1.0/1.1 probe now works on Python builds linked against OpenSSL 3, which refuse
+  legacy protocols at the default security level (it previously reported "could not test").
+- C7: a server that resets the connection when only TLS 1.0/1.1 is offered is now correctly
+  reported as refusing legacy TLS. Verified against badssl.com's TLS 1.0/1.1/1.2 endpoints.
+
 ## 0.1.0 – 2026-10-23
 
 First public release.

@@ -214,7 +214,13 @@ def tls_connect(host: str, ip: Optional[str] = None, port: int = 443, timeout: f
                 verify: bool = True, max_version: Optional[ssl.TLSVersion] = None) -> TlsResult:
     ctx = ssl.create_default_context() if verify else ssl._create_unverified_context()
     if max_version is not None:
-        ctx.minimum_version = ssl.TLSVersion.MINIMUM_SUPPORTED
+        # Probing for legacy protocol support: OpenSSL 3 refuses TLS < 1.2 at the default
+        # security level, so lower it for this probe only. LibreSSL has no @SECLEVEL.
+        try:
+            ctx.set_ciphers("DEFAULT:@SECLEVEL=0")
+        except ssl.SSLError:
+            pass
+        ctx.minimum_version = ssl.TLSVersion.TLSv1
         ctx.maximum_version = max_version
     try:
         with socket.create_connection((ip or host, port), timeout=timeout) as sock:

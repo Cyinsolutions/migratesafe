@@ -223,6 +223,25 @@ def evaluate_cookie(c: Cookie) -> List[Tuple[str, str]]:
     return out
 
 
+# ---------------------------------------------------------------- Legacy TLS probe (C7)
+
+_CLIENT_SIDE = ("no protocols available", "unsupported protocol", "no ciphers available")
+_SERVER_REFUSAL = ("protocol version", "handshake failure", "wrong version", "connection reset",
+                   "unexpected eof", "eof occurred", "connection aborted")
+
+
+def classify_legacy_tls(ok: bool, error: Optional[str]) -> str:
+    """Interpret a TLS<=1.1-only handshake: 'accepted', 'refused' (by the server) or 'unknown'."""
+    if ok:
+        return "accepted"
+    low = (error or "").lower()
+    if any(k in low for k in _CLIENT_SIDE):
+        return "unknown"  # our TLS library would not even offer the old protocol
+    if any(k in low for k in _SERVER_REFUSAL):
+        return "refused"
+    return "unknown"
+
+
 # ---------------------------------------------------------------- Redirects (C10)
 
 

@@ -6,5 +6,5 @@ Domain Migration of Web-Hosted Cryptocurrency Trading Platforms," Zenodo, 2026,
 doi: 10.5281/zenodo.23576774.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 PAPER_DOI = "10.5281/zenodo.23576774"

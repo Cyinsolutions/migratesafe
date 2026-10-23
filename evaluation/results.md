@@ -1,6 +1,6 @@
 # MigrateSafe fault-injection evaluation (simulated)
 
-Tool version 0.1.0. All 14 checks were run unchanged against an in-memory world (DNS, HTTP, TLS, CT and RDAP are simulated); see `evaluation/world.py` and `evaluation/scenarios.py`.
+Tool version 0.1.1. All 14 checks were run unchanged against an in-memory world (DNS, HTTP, TLS, CT and RDAP are simulated); see `evaluation/world.py` and `evaluation/scenarios.py`.
 
 - Injected faults: **28**; detected (expected check reports FAIL/WARN): **27** (96%)
 - False positives on the correctly migrated baseline: **0** (none)

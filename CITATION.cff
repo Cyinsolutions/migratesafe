@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use MigrateSafe, please cite the accompanying paper."
 title: "MigrateSafe: read-only security audit for domain migrations"
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-10-23
 license: MIT
 repository-code: "https://github.com/Cyinsolutions/migratesafe"
