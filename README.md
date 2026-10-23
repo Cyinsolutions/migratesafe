@@ -1,6 +1,5 @@
 # MigrateSafe
 
-[![tests](https://github.com/Cyinsolutions/migratesafe/actions/workflows/tests.yml/badge.svg)](https://github.com/Cyinsolutions/migratesafe/actions/workflows/tests.yml)
 [![PyPI](https://img.shields.io/pypi/v/migratesafe)](https://pypi.org/project/migratesafe/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23576774.svg)](https://doi.org/10.5281/zenodo.23576774)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
