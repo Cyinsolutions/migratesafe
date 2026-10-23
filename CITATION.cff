@@ -4,7 +4,7 @@ title: "MigrateSafe: read-only security audit for domain migrations"
 version: 0.1.0
 date-released: 2026-10-23
 license: MIT
-repository-code: "https://github.com/myabhya/migratesafe"
+repository-code: "https://github.com/Cyinsolutions/migratesafe"
 authors:
   - family-names: More
     given-names: Abhijeet Ashok

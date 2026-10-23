@@ -28,9 +28,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/myabhya/migratesafe"
-Repository = "https://github.com/myabhya/migratesafe"
-Issues = "https://github.com/myabhya/migratesafe/issues"
+Homepage = "https://github.com/Cyinsolutions/migratesafe"
+Repository = "https://github.com/Cyinsolutions/migratesafe"
+Issues = "https://github.com/Cyinsolutions/migratesafe/issues"
 Paper = "https://doi.org/10.5281/zenodo.23576774"
 ORCID = "https://orcid.org/0009-0001-4934-0204"
 
